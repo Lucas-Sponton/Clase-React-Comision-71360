@@ -1,12 +1,31 @@
-import MainContenido from "../MainContenido"
 
-const ItemListContainer = ({texto,texto2}) => {
+import arrayProductos from "../../assets/json/productos.json"
+import { useEffect, useState } from "react"
+import ItemList from "../ItemList"
+
+
+const ItemListContainer = () => {
+    const [items, setItems] = useState([])
+
+    useEffect(() => {
+        const promesa = new Promise(resolve => {
+            setTimeout(() => {
+                resolve(arrayProductos)
+            }, 2000);
+        })
+
+        promesa.then(response => {
+            setItems(response)
+        })
+    }, [])
+
+
     return (
-        <>
-        <h1 className="mt-5 mb-2 fw-bold">{texto}</h1>
-        <MainContenido />
-        <h3 className="mt-4 fw-bold">{texto2}</h3>
-        </>
+        <div className="container">
+            <div className="row">
+                <ItemList items={items} />
+            </div>
+        </div>
     )
 }
 
