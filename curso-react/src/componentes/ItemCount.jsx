@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Flip, toast, ToastContainer } from "react-toastify";
 
 const ItemCount = ({ stock }) => {
@@ -24,6 +24,10 @@ const ItemCount = ({ stock }) => {
             mostrarAlerta()
         }
     }
+
+    useEffect(() => {
+        setItemStock(stock)
+    }, [stock])
 
     const mostrarAlerta = () => {
         

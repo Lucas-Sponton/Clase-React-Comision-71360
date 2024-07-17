@@ -106,5 +106,32 @@
         "price": 1700,
         "stock": 7,
         "category": "comida"
+    },
+    {
+        "id": 13,
+        "tittle": "Café Espresso Roast",
+        "description": "Blend de granos de Latinoamérica con un tostado oscuro. Es el corazón de todas nuestras bebidas que podes tener en tu casa. Su sabor es intenso, dulce y acaramelado, ideal para acompañarlo con un complemento de chocolate, nueves, caramelo o especias.",
+        "image": "https://djftrby1k8irl.cloudfront.net/s3fs-public/2022-03%2FEspresso-425x425.png?auto=format,compress&q=70&crop=focalpoint&ar=1:1.0&w=180&fit=crop&dpr=2",
+        "price": 1800,
+        "stock": 6,
+        "category": "regalo"
+    },
+    {
+        "id": 14,
+        "tittle": "Café Sumatra",
+        "description": "Café de origen con tostado oscuro, cuerpo completo y consistente. Su sabor predominante es terroso y herbal. Acompañá tu café con un complemento de canela, avena o queso. Probalo con nuestro Scon de 4 quesos!",
+        "image": "https://djftrby1k8irl.cloudfront.net/s3fs-public/2022-03%2FSumatra-425x425.png?auto=format,compress&q=70&crop=focalpoint&ar=1:1.0&w=180&fit=crop&dpr=2",
+        "price": 1800,
+        "stock": 7,
+        "category": "regalo"
+    },
+    {
+        "id": 15,
+        "tittle": "Té Mint Citrus",
+        "description": "La base de hierbabuena de este té se complementa con notas de menta fresca y toques de verbena dulce y especiada. Contiene 12 unidades de 3,4 g.",
+        "image": "https://djftrby1k8irl.cloudfront.net/s3fs-public/2022-03%2FMint-Citrus-425.png?auto=format,compress&q=70&crop=focalpoint&ar=1:1.0&w=180&fit=crop&dpr=2",
+        "price": 1800,
+        "stock": 9,
+        "category": "regalo"
     }
 ]

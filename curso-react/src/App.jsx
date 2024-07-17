@@ -1,18 +1,24 @@
-import './App.css'
-import ItemListContainer from './componentes/header/ItemListContainer'
-import NavBar from './componentes/header/NavBar'
-import ItemCount from './componentes/ItemCount'
-import 'react-toastify/dist/ReactToastify.css'
-import ItemDetailContainer from './componentes/ItemDetailContainer'
+import './App.css';
+import ItemListContainer from './componentes/header/ItemListContainer';
+import NavBar from './componentes/header/NavBar';
+import 'react-toastify/dist/ReactToastify.css';
+import ItemDetailContainer from './componentes/ItemDetailContainer';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 
 
 function App() {
   return (
     <>
-      <NavBar />
-      <ItemListContainer />
-      <ItemDetailContainer />
-      <ItemCount stock={10}/>
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route path={"/"} element={<ItemListContainer />} />
+          <Route path={"/category/:id"} element={<ItemListContainer />} />
+          <Route path={"/item/:id"} element={<ItemDetailContainer />} />
+
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }

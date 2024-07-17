@@ -1,3 +1,7 @@
+import ItemCount from "./ItemCount"
+
+
+
 const ItemDetail = ({ item }) => {
     return (
         <div className="container">
@@ -12,6 +16,7 @@ const ItemDetail = ({ item }) => {
                     <div className="alert alert-primary" role="alert">
                         Aceptamos Visa, Mastercard y/o MercadoPago!
                     </div>
+                    <ItemCount stock={item.stock} />
                 </div>
             </div>
         </div>
