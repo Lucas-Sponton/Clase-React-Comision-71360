@@ -1,7 +1,7 @@
 
-import arrayProductos from "../../assets/json/productos.json"
+import arrayProductos from "../assets/json/productos.json"
 import { useEffect, useState } from "react"
-import ItemList from "../ItemList"
+import ItemList from "./ItemList"
 import { useParams } from "react-router-dom"
 //import { collection, doc, getDoc, getDocs, getFirestore } from "firebase/firestore";
 

@@ -1,8 +1,14 @@
+import { useContext } from "react"
 import ItemCount from "./ItemCount"
-
-
+import { CartContext } from "./context/CartContext"
 
 const ItemDetail = ({ item }) => {
+    const {addItem} = useContext(CartContext);
+
+    const onAdd = (quantity) => {
+        addItem(item, quantity);
+    }
+
     return (
         <div className="container">
             <div className="row">
@@ -16,7 +22,7 @@ const ItemDetail = ({ item }) => {
                     <div className="alert alert-primary" role="alert">
                         Aceptamos Visa, Mastercard y/o MercadoPago!
                     </div>
-                    <ItemCount stock={item.stock} />
+                    <ItemCount stock={item.stock} onAdd={onAdd} />
                 </div>
             </div>
         </div>
