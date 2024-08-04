@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Flip, toast, ToastContainer } from "react-toastify";
 
 const ItemCount = ({ stock, onAdd}) => {

@@ -8,16 +8,6 @@ const ItemListContainer = () => {
     const [items, setItems] = useState([])
     const {id} = useParams();
 
-    //importo los productos a la Bd
-    /*useEffect(() => {
-        const db = getFirestore();
-        const itemsCollection = collection(db, "items");
-        arrayProductos.forEach(item => {
-            addDoc(itemsCollection, item)
-        })
-        console.log("proceso de importacion finalizado.");
-    }, []) */ 
-
     useEffect(() => {
         const db = getFirestore();
         const itemsCollection = collection(db, "items");

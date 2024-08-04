@@ -51,7 +51,9 @@ const Cart = () => {
                                 <td className="align-middle">&nbsp;</td>
                                 <td className="align-middle">&nbsp;</td>
                                 <td className="align-middle text-center">${sumProducts()}</td>
-                                <td className="align-middle">&nbsp;</td>
+                                <td className="align-middle text-end">
+                                    <Link to={"/checkout"} className="btn btn-outline-success btn-sm rounded-pill m-2" title="Ir al CheckOut">Terminar Compra</Link>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
