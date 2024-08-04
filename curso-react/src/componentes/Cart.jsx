@@ -28,7 +28,7 @@ const Cart = () => {
                         <tbody>
                             <tr>
                                 <td colSpan={5} className="text-end">
-                                    <button className="btn btn-outline-success btn-sm rounded-pill m-2" title="Vaciar Carrito">Vaciar Carrito
+                                    <button className="btn btn-outline-success btn-sm rounded-pill m-2" title="Vaciar Carrito" onClick={clear}>Vaciar Carrito
                                         <img src="/images/trash.svg" alt="Eliminar Producto" width={24} onClick={() => { removeItem(item.id) }} />
                                     </button>
                                 </td>

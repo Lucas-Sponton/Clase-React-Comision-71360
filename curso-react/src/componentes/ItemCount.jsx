@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom";
-import { Flip, toast, ToastContainer } from "react-toastify";
 
 const ItemCount = ({ stock, onAdd}) => {
     const [contador, setContador] = useState(1);
@@ -25,18 +24,12 @@ const ItemCount = ({ stock, onAdd}) => {
             onAdd(contador);
             setContador(1)
             setVisible(false)
-            mostrarAlerta()
         }
     }
 
     useEffect(() => {
         setItemStock(stock)
     }, [stock])
-
-    const mostrarAlerta = () => {
-
-        toast.success("Estupendo, se agregó tu producto al carrito!", { position: "top-center", theme: "colored", transition: Flip });
-    }
 
     return (
         <>
@@ -54,7 +47,6 @@ const ItemCount = ({ stock, onAdd}) => {
                     <div className="row">
                         <div className="col">
                             <button type="button" className="btn btn-outline-primary rounded-pill m-2" onClick={addToCart}>Agregar al carrito</button>
-                            <ToastContainer />
                         </div>
                     </div>
                 </div>

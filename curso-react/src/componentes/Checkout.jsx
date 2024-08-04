@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 
 const Checkout = () => {
-    const { cart, totalProducts, sumProducts } = useContext(CartContext);
+    const { cart, totalProducts, sumProducts, clear} = useContext(CartContext);
     const [nombre, setNombre] = useState("");
     const [email, setEmail] = useState("");
     const [telefono, setTelefono] = useState("");
@@ -21,9 +21,13 @@ const Checkout = () => {
             return false;
         }
 
+        const fecha = new Date();
+
+
         const order = {
             buyer: { name: nombre, email: email, phone: telefono },
             items: cart.map(item => ({ id: item.id, title: item.tittle, price: item.price })),
+            date: `${fecha.getDate()}-${fecha.getMonth() + 1}-${fecha.getFullYear()} ${fecha.getHours()}:${fecha.getMinutes()}:${fecha.getSeconds()}`,
             total: sumProducts()
         }
 
@@ -31,7 +35,24 @@ const Checkout = () => {
         const orderCollection = collection(db, "orders");
         addDoc(orderCollection, order).then(response => {
             setOrderId(response.id);
+            clear();
         })
+    }
+
+    if (totalProducts() == 0 && orderId) {
+        return (
+            <div className="container my-5">
+                <div className="row my-5">
+                    <div className="col text-center">
+                        {orderId ? <div className="alert alert-success" role="alert">
+                            <h3>Gracias por tu compra!</h3>
+                            <p>Tu número de compra es: <b>{orderId}</b></p>
+                            <Link to={"/"} className="btn btn-outline-primary rounded-pill m-2">Volver a la Página Principal</Link>
+                        </div> : ""}
+                    </div>
+                </div>
+            </div>
+        )
     }
 
     if (totalProducts() == 0) {
@@ -47,59 +68,51 @@ const Checkout = () => {
                 </div>
             </div>
         )
-    }
-
-    return (
-        <div className="container my-5">
-            <div className="row">
-                <div className="col">
-                    <form>
-                        <div className="mb-3">
-                            <label htmlFor="nombre" className="form-label">Nombre</label>
-                            <input type="text" className="form-control" onInput={(e) => { setNombre(e.target.value) }} />
-                        </div>
-                        <div className="mb-3">
-                            <label htmlFor="email" className="form-label">Email</label>
-                            <input type="text" className="form-control" onInput={(e) => { setEmail(e.target.value) }} />
-                        </div>
-                        <div className="mb-3">
-                            <label htmlFor="telefono" className="form-label">Teléfono</label>
-                            <input type="text" className="form-control" onInput={(e) => { setTelefono(e.target.value) }} />
-                        </div>
-                        <button type="button" className="btn btn-primary" onClick={generarOrden}>Generar Orden</button>
-                    </form>
-                </div>
-                <div className="col">
-                    <table className="table">
-                        <tbody>
-                            {cart.map(item => (
-                                <tr key={item.id}>
-                                    <td className="align-middle"><img src={item.image} alt={item.tittle} width={68} /></td>
-                                    <td className="align-middle">{item.tittle}</td>
-                                    <td className="align-middle text-center">${item.price} x {item.quantity}</td>
-                                    <td className="align-middle text-center">${item.price * item.quantity}</td>
+    } else {
+        return (
+            <div className="container">
+                <div className="row">
+                    <div className="col">
+                        <form>
+                            <div className="mb-3">
+                                <label htmlFor="nombre" className="form-label">Nombre</label>
+                                <input type="text" className="form-control" onInput={(e) => { setNombre(e.target.value) }} />
+                            </div>
+                            <div className="mb-3">
+                                <label htmlFor="email" className="form-label">Email</label>
+                                <input type="text" className="form-control" onInput={(e) => { setEmail(e.target.value) }} />
+                            </div>
+                            <div className="mb-3">
+                                <label htmlFor="telefono" className="form-label">Teléfono</label>
+                                <input type="text" className="form-control" onInput={(e) => { setTelefono(e.target.value) }} />
+                            </div>
+                            <button type="button" className="btn btn-primary" onClick={generarOrden}>Generar Orden</button>
+                        </form>
+                    </div>
+                    <div className="col">
+                        <table className="table">
+                            <tbody>
+                                {cart.map(item => (
+                                    <tr key={item.id}>
+                                        <td className="align-middle"><img src={item.image} alt={item.tittle} width={68} /></td>
+                                        <td className="align-middle">{item.tittle}</td>
+                                        <td className="align-middle text-center">${item.price} x {item.quantity}</td>
+                                        <td className="align-middle text-center">${item.price * item.quantity}</td>
+                                    </tr>
+                                ))}
+                                <tr>
+                                    <td className="align-middle">Total a Pagar</td>
+                                    <td className="align-middle">&nbsp;</td>
+                                    <td className="align-middle">&nbsp;</td>
+                                    <td className="align-middle text-center">${sumProducts()}</td>
                                 </tr>
-                            ))}
-                            <tr>
-                                <td className="align-middle">Total a Pagar</td>
-                                <td className="align-middle">&nbsp;</td>
-                                <td className="align-middle">&nbsp;</td>
-                                <td className="align-middle text-center">${sumProducts()}</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
-            <div className="row my-5">
-                <div className="col text-center">
-                    {orderId ? <div className="alert alert-success" role="alert">
-                        <h3>Gracias por tu compra!</h3>
-                        <p>Tu número de compra es: <b>{orderId}</b></p>
-                    </div> : ""}
-                </div>
-            </div>
-        </div>
-    )
+        )
+    }
 }
 
 
