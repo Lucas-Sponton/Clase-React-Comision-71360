@@ -1,4 +1,4 @@
-import './Styles/App.css';
+import './Styles/estilos.css';
 import ItemListContainer from './componentes/ItemListContainer';
 import NavBar from './componentes/NavBar';
 import 'react-toastify/dist/ReactToastify.css';
