@@ -1,1 +1,27 @@
-/*NavBar estilos */
+/*Card estilos */
+
+.cardTamaño {
+    width: 90%;
+}
+
+.imgEstilo {
+    width: 75%;
+    height: auto;
+}
+
+.imgEstilo:hover {
+    transform: scale(1.10);
+}
+
+.divCardEstilo {
+    background-color: rgba(25, 100, 84, 0.3);
+}
+
+.divCardPrecioEstilo {
+    background-color: rgba(25, 100, 84, 0.7);
+}
+
+.textoEstilo {
+    color: white;
+    opacity: 1;
+}

@@ -22,8 +22,6 @@ const Checkout = () => {
         }
 
         const fecha = new Date();
-
-
         const order = {
             buyer: { name: nombre, email: email, phone: telefono },
             items: cart.map(item => ({ id: item.id, title: item.tittle, price: item.price })),
