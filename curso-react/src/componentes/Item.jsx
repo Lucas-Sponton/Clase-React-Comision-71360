@@ -5,7 +5,7 @@ const Item = ({ item }) => {
         <div className="col-md-3 d-flex justify-content-evenly p-0 m-0 mt-2">
             <div className="card mb-3 bg-success cardTamaño">
                 <Link to={"/item/" + item.id} className="bg-success-subtle rounded-circle">
-                    <img src={item.image} className="card-img-top mx-auto d-block imgEstilo" alt={item.tittle} />
+                    <img src={item.image} className="card-img-top mx-auto d-block img-fluid" alt={item.tittle} />
                 </Link>
                 <div className="card-body divCardEstilo pt-2">
                     <div className="h-50 my-3">
