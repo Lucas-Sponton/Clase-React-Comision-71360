@@ -29,3 +29,49 @@
 .img-fluid:hover {
     transform: scale(1.10);
 }
+
+/* detail container */
+.svgHover:hover {
+    color: #0a3622;
+}
+
+/* checkOut */
+
+.glass-effect1 {
+    background-image: url(../../public/images/cafeteria-1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.checkoutFormFondo1 {
+    background: #fafafa10 !important;
+    backdrop-filter: blur(0.1rem) !important;
+}
+
+.checkoutFormInputFondo {
+    background: rgb(245, 245, 250, 0.4);
+}
+
+.glass-effect2 {
+    background-image: url(../../public/images/cafeteria-5.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.checkoutFormFondo2 {
+    background: #fafafa10 !important;
+    backdrop-filter: blur(0.3rem) !important;
+}
+
+.btn-volver:hover {
+    color: #ffff !important;
+}
+
+.glass-effect3 {
+    background-image: url(../../public/images/cafeteria-10.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
