@@ -3,7 +3,7 @@ import CartWidget from "./CartWidget"
 
 const NavBar = () => {
     return (
-        <div className="container bg-success-subtle rounded-top rounded-5 my-2">
+        <div className="container bg-success-subtle rounded-top rounded-5 my-2 sticky-top">
             <div className="row justify-content-evenly">
                 <div className="col-md-2">
                     <NavLink to={"/"} className="nav-link">
@@ -17,7 +17,7 @@ const NavBar = () => {
                 </div>
                 <div className="col align-content-center">
                     <ul className="nav justify-content-evenly">
-                        <li className="">
+                        <li className="nav-item">
                             <NavLink to={"/category/bebida"} className="px-3 py-2 link-success link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Bebidas</NavLink>
                         </li>
                         <li className="nav-item">

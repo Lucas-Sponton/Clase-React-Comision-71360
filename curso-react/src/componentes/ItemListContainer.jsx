@@ -3,6 +3,7 @@ import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
 import { collection, getDocs, getFirestore, query, where } from "firebase/firestore";
 import Loading from "./Loading";
+import ImagenBienvenida from "./ImagenBienvenida";
 
 
 const ItemListContainer = () => {
@@ -28,7 +29,11 @@ const ItemListContainer = () => {
     return (
         <div className="container">
             <div className="row">
-                {loading ? <Loading /> : <ItemList items={items} />}
+                <ImagenBienvenida />
+                {loading ? <Loading /> :
+
+                    <ItemList items={items} />
+                }
             </div>
         </div>
     )
