@@ -9,12 +9,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyAQgKsq9nKLkYXFtVxngV0rHF2B4rYoOd8",
-    authDomain: "coderhouse-reactjs-1.firebaseapp.com",
-    projectId: "coderhouse-reactjs-1",
-    storageBucket: "coderhouse-reactjs-1.appspot.com",
-    messagingSenderId: "407216632225",
-    appId: "1:407216632225:web:3b458ad86b8c7ac7721be0"
+    apiKey: import.meta.env.VITE_APIKEY ,
+    authDomain: import.meta.env.VITE_AUTHDOMAIN ,
+    projectId: import.meta.env.VITE_PROJECTID ,
+    storageBucket: import.meta.env.VITE_SOTRAGEBUCKET ,
+    messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID ,
+    appId: import.meta.env.VITE_APPID
 };
 
 // Initialize Firebase
