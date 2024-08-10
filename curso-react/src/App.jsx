@@ -1,7 +1,6 @@
 import './Styles/estilos.css';
 import ItemListContainer from './componentes/ItemListContainer';
 import NavBar from './componentes/NavBar';
-import 'react-toastify/dist/ReactToastify.css';
 import ItemDetailContainer from './componentes/ItemDetailContainer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import CartContextProvider from './componentes/context/CartContext';
